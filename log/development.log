@@ -1,0 +1,822 @@
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20210727061455)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210727061455"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (6.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-02-05 19:27:41.803811"], ["updated_at", "2023-02-05 19:27:41.803811"]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 180.198.145.35 at 2023-02-05 19:28:30 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.5ms | Allocations: 571)
+Completed 200 OK in 47ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 4400)
+
+
+Started GET "/" for 180.198.145.35 at 2023-02-05 19:30:38 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+Zeitwerk::NameError (expected file /home/ec2-user/environment/bookers1-debug/app/controllers/homes_controller.rb to define constant HomesController, but didn't
+
+      raise Zeitwerk::NameError.new("expected file #{file} to define constant #{cpath}, but didn't", cref.last)
+      ^^^^^):
+  
+zeitwerk (2.6.0) lib/zeitwerk/loader/callbacks.rb:25:in `on_file_autoloaded'
+zeitwerk (2.6.0) lib/zeitwerk/kernel.rb:28:in `require'
+activesupport (6.1.6.1) lib/active_support/inflector/methods.rb:274:in `const_get'
+activesupport (6.1.6.1) lib/active_support/inflector/methods.rb:274:in `constantize'
+activesupport (6.1.6.1) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.1.6.1) lib/action_dispatch/http/request.rb:93:in `controller_class_for'
+actionpack (6.1.6.1) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (6.1.6.1) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (6.1.6.1) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (6.1.6.1) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.6.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.6.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.6.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/host_authorization.rb:142:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.6.1) lib/rails/engine.rb:539:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 180.198.145.35 at 2023-02-05 19:39:15 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+Zeitwerk::NameError (expected file /home/ec2-user/environment/bookers1-debug/app/controllers/homes_controller.rb to define constant HomesController, but didn't
+
+      raise Zeitwerk::NameError.new("expected file #{file} to define constant #{cpath}, but didn't", cref.last)
+      ^^^^^):
+  
+zeitwerk (2.6.0) lib/zeitwerk/loader/callbacks.rb:25:in `on_file_autoloaded'
+zeitwerk (2.6.0) lib/zeitwerk/kernel.rb:28:in `require'
+activesupport (6.1.6.1) lib/active_support/inflector/methods.rb:274:in `const_get'
+activesupport (6.1.6.1) lib/active_support/inflector/methods.rb:274:in `constantize'
+activesupport (6.1.6.1) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.1.6.1) lib/action_dispatch/http/request.rb:93:in `controller_class_for'
+actionpack (6.1.6.1) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (6.1.6.1) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (6.1.6.1) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (6.1.6.1) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.6.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.6.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.6.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/host_authorization.rb:142:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.6.1) lib/rails/engine.rb:539:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 180.198.145.35 at 2023-02-05 19:40:15 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (uninitialized constant HomesController
+
+class Controller < HomesController
+                   ^^^^^^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 180.198.145.35 at 2023-02-05 19:40:45 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+TypeError (superclass mismatch for class Controller):
+  
+app/controllers/homes_controller.rb:1:in `<main>'
+Started GET "/" for 180.198.145.35 at 2023-02-05 19:41:24 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+TypeError (superclass mismatch for class Controller):
+  
+app/controllers/homes_controller.rb:1:in `<main>'
+Started GET "/" for 180.198.145.35 at 2023-02-05 19:45:32 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+TypeError (superclass mismatch for class Controller):
+  
+app/controllers/homes_controller.rb:1:in `<main>'
+Started GET "/" for 180.198.145.35 at 2023-02-05 19:47:17 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+Zeitwerk::NameError (expected file /home/ec2-user/environment/bookers1-debug/app/controllers/homes_controller.rb to define constant HomesController, but didn't
+
+      raise Zeitwerk::NameError.new("expected file #{file} to define constant #{cpath}, but didn't", cref.last)
+      ^^^^^):
+  
+zeitwerk (2.6.0) lib/zeitwerk/loader/callbacks.rb:25:in `on_file_autoloaded'
+zeitwerk (2.6.0) lib/zeitwerk/kernel.rb:28:in `require'
+activesupport (6.1.6.1) lib/active_support/inflector/methods.rb:274:in `const_get'
+activesupport (6.1.6.1) lib/active_support/inflector/methods.rb:274:in `constantize'
+activesupport (6.1.6.1) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.1.6.1) lib/action_dispatch/http/request.rb:93:in `controller_class_for'
+actionpack (6.1.6.1) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (6.1.6.1) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (6.1.6.1) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (6.1.6.1) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.6.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.6.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.6.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/host_authorization.rb:142:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.6.1) lib/rails/engine.rb:539:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 180.198.145.35 at 2023-02-05 19:52:12 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (Duration: 2.0ms | Allocations: 639)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+yarn run v1.22.19
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+warning ../../package.json: No license field
+warning ../../package.json: No license field
+error Command "webpack" not found.
+
+  Rendered layout layouts/application.html.erb (Duration: 1830.3ms | Allocations: 18527)
+Completed 500 Internal Server Error in 1838ms (Allocations: 20792)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /home/ec2-user/environment/bookers1-debug/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+Started GET "/" for 180.198.145.35 at 2023-02-05 20:05:26 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (Duration: 2.2ms | Allocations: 856)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.4ms | Allocations: 7054)
+Completed 200 OK in 79ms (Views: 67.9ms | ActiveRecord: 0.0ms | Allocations: 10138)
+
+
+Started GET "/" for 180.198.145.35 at 2023-02-05 20:05:37 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (Duration: 0.3ms | Allocations: 148)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3260)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 3786)
+
+
+Started GET "/" for 180.198.145.35 at 2023-02-05 20:08:44 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (Duration: 1.4ms | Allocations: 915)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 50.9ms | Allocations: 7073)
+Completed 200 OK in 64ms (Views: 56.0ms | ActiveRecord: 0.0ms | Allocations: 10271)
+
+
+Started GET "/" for 180.198.145.35 at 2023-02-05 20:08:46 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (Duration: 0.4ms | Allocations: 188)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3302)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 3799)
+
+
+Started GET "/" for 180.198.145.35 at 2023-02-05 20:08:47 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (Duration: 1.8ms | Allocations: 145)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 3112)
+Completed 200 OK in 13ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 3501)
+
+
+Started GET "/" for 180.198.145.35 at 2023-02-05 20:09:54 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (Duration: 1.0ms | Allocations: 260)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 3688)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.0ms | Allocations: 4880)
+
+
+Started GET "/books" for 180.198.145.35 at 2023-02-05 20:09:56 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1458)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 1550)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.5ms | Allocations: 6219)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+        <td><%= link_to 'Show', book %></td>
+        <td><%= link_to 'Edit', edit_book_path, %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h2>New book</h2>
+<%= render 'form' %>
+
+):
+1:    <h1>Books</h1>
+2:    
+3:    <table>
+4:      <thead>
+5:        <tr>
+6:          <th>Title</th>
+7:          <th>Body</th>
+8:          <th colspan="3"></th>
+9:        </tr>
+10:      </thead>
+11:    
+12:      <tbody>
+13:        <% @books.each do |book| %>
+14:          <tr>
+15:            <td><%= book.title %></td>
+16:            <td><%= book.body %></td>
+17:            <td><%= link_to 'Show', book %></td>
+18:            <td><%= link_to 'Edit', edit_book_path, %></td>
+19:            <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+20:          </tr>
+21:        <% end %>
+22:      </tbody>
+23:    </table>
+24:    
+25:    
+26:    <h2>New book</h2>
+27:    <%= render 'form' %>
+  
+app/views/books/index.html.erb:18: syntax error, unexpected ')'
+app/views/books/index.html.erb:21: syntax error, unexpected `end', expecting ')'
+app/views/books/index.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/books/index.html.erb:18: syntax error, unexpected ')'
+app/views/books/index.html.erb:21: syntax error, unexpected `end', expecting ')'
+app/views/books/index.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/books/index.html.erb:18: syntax error, unexpected ')'
+app/views/books/index.html.erb:21: syntax error, unexpected `end', expecting ')'
+app/views/books/index.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/books/index.html.erb:18: syntax error, unexpected ')'
+app/views/books/index.html.erb:21: syntax error, unexpected `end', expecting ')'
+app/views/books/index.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/books/index.html.erb:18: syntax error, unexpected ')'
+app/views/books/index.html.erb:21: syntax error, unexpected `end', expecting ')'
+app/views/books/index.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/books/index.html.erb:18: syntax error, unexpected ')'
+app/views/books/index.html.erb:21: syntax error, unexpected `end', expecting ')'
+app/views/books/index.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/books" for 180.198.145.35 at 2023-02-05 20:11:03 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/books_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:13
+  Rendered books/_form.html.erb (Duration: 6.1ms | Allocations: 5041)
+  Rendered books/index.html.erb within layouts/application (Duration: 13.7ms | Allocations: 6389)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 6471)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 4.3ms | Allocations: 11519)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `book' for #<ActionView::Base:0x00000000008160>
+Did you mean?  @book
+               @books):
+    1: <%= form_with model:book, local:true do |f| %>
+    2:   <% if book.errors.any? %>
+    3:     <div>
+    4:       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+  
+app/views/books/_form.html.erb:1
+app/views/books/index.html.erb:27
+Started GET "/books" for 180.198.145.35 at 2023-02-05 20:17:24 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/books/index.html.erb:13
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:13
+  Rendered books/_form.html.erb (Duration: 7.6ms | Allocations: 5296)
+  Rendered books/index.html.erb within layouts/application (Duration: 22.2ms | Allocations: 7337)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 7419)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.4ms | Allocations: 8612)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `book' for #<ActionView::Base:0x000000000083b8>
+Did you mean?  @book
+               @books):
+    1: <%= form_with model:@book, local:true do |f| %>
+    2:   <% if book.errors.any? %>
+    3:     <div>
+    4:       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+    5: 
+  
+app/views/books/_form.html.erb:2
+app/views/books/_form.html.erb:1
+app/views/books/index.html.erb:27
+Started GET "/books" for 180.198.145.35 at 2023-02-05 20:18:47 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:13
+  Rendered books/_form.html.erb (Duration: 43.4ms | Allocations: 8466)
+  Rendered books/index.html.erb within layouts/application (Duration: 49.8ms | Allocations: 9729)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 73.0ms | Allocations: 13071)
+Completed 200 OK in 76ms (Views: 74.8ms | ActiveRecord: 0.1ms | Allocations: 14328)
+
+
+Started POST "/books" for 180.198.145.35 at 2023-02-05 20:20:25 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Create Book"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1321)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'title' for Book.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/books_controller.rb:11:in `create'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20210727061455)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (6.6ms)[0m  [1m[35mDROP TABLE "books"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (2.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210727061455"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20210727061455)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "books" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210727061455"]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/books" for 180.198.145.35 at 2023-02-05 20:28:46 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Create Book"}
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2515)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2617)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.5ms | Allocations: 10708)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10:   </thead>
+    11: 
+    12:   <tbody>
+    13:     <% @books.each do |book| %>
+    14:       <tr>
+    15:         <td><%= book.title %></td>
+    16:         <td><%= book.body %></td>
+  
+app/views/books/index.html.erb:13
+app/controllers/books_controller.rb:16:in `create'
+Started POST "/books" for 180.198.145.35 at 2023-02-05 20:33:13 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Create Book"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/books_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2078)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2161)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.9ms | Allocations: 8280)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10:   </thead>
+    11: 
+    12:   <tbody>
+    13:     <% @books.each do |book| %>
+    14:       <tr>
+    15:         <td><%= book.title %></td>
+    16:         <td><%= book.body %></td>
+  
+app/views/books/index.html.erb:13
+app/controllers/books_controller.rb:16:in `create'
+Started POST "/books" for 180.198.145.35 at 2023-02-05 20:33:18 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Create Book"}
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1792)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1869)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2943)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    10:   </thead>
+    11: 
+    12:   <tbody>
+    13:     <% @books.each do |book| %>
+    14:       <tr>
+    15:         <td><%= book.title %></td>
+    16:         <td><%= book.body %></td>
+  
+app/views/books/index.html.erb:13
+app/controllers/books_controller.rb:16:in `create'
+Started POST "/books" for 180.198.145.35 at 2023-02-05 20:33:39 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Create Book"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/books_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:13
+  Rendered books/_form.html.erb (Duration: 8.3ms | Allocations: 5145)
+  Rendered books/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 6286)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.5ms | Allocations: 12442)
+Completed 200 OK in 66ms (Views: 50.1ms | ActiveRecord: 0.9ms | Allocations: 18173)
+
+
+Started GET "/books" for 180.198.145.35 at 2023-02-05 20:33:57 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:13
+  Rendered books/_form.html.erb (Duration: 4.6ms | Allocations: 881)
+  Rendered books/index.html.erb within layouts/application (Duration: 19.4ms | Allocations: 1725)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | Allocations: 4701)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.1ms | Allocations: 5202)
+
+
+Started POST "/books" for 180.198.145.35 at 2023-02-05 20:33:59 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"", "body"=>""}, "commit"=>"Create Book"}
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:13
+  Rendered books/_form.html.erb (Duration: 6.3ms | Allocations: 2759)
+  Rendered books/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 3521)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 6411)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.1ms | Allocations: 7427)
+
+
+Started POST "/books" for 180.198.145.35 at 2023-02-05 20:37:58 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "book"=>{"title"=>"saa", "body"=>"saa"}, "commit"=>"Create Book"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:12:in `create'
+  [1m[36mBook Create (4.8ms)[0m  [1m[32mINSERT INTO "books" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "saa"], ["body", "saa"], ["created_at", "2023-02-05 20:37:58.304748"], ["updated_at", "2023-02-05 20:37:58.304748"]]
+  ↳ app/controllers/books_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:12:in `create'
+Redirected to https://5498499f4259447f9291ac4dedd24933.vfs.cloud9.ap-northeast-1.amazonaws.com/books/1
+Completed 302 Found in 24ms (ActiveRecord: 10.7ms | Allocations: 5180)
+
+
+Started GET "/books/1" for 180.198.145.35 at 2023-02-05 20:37:58 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 330)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3404)
+Completed 200 OK in 27ms (Views: 12.2ms | ActiveRecord: 0.2ms | Allocations: 8031)
+
+
+Started GET "/books" for 180.198.145.35 at 2023-02-05 20:38:03 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:13
+  Rendered books/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1911)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 1987)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.1ms | Allocations: 2418)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"books"}, missing required keys: [:id]
+Did you mean?  edit_book_url):
+    15:         <td><%= book.title %></td>
+    16:         <td><%= book.body %></td>
+    17:         <td><%= link_to 'Show', book %></td>
+    18:         <td><%= link_to 'Edit', edit_book_path %></td>
+    19:         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    20:       </tr>
+    21:     <% end %>
+  
+app/views/books/index.html.erb:18
+app/views/books/index.html.erb:13
+Started GET "/books" for 180.198.145.35 at 2023-02-05 20:41:07 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:13
+  Rendered books/_form.html.erb (Duration: 19.5ms | Allocations: 3068)
+  Rendered books/index.html.erb within layouts/application (Duration: 29.6ms | Allocations: 5019)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.4ms | Allocations: 11131)
+Completed 200 OK in 72ms (Views: 57.5ms | ActiveRecord: 0.6ms | Allocations: 18337)
+
+
+Started GET "/books/1/edit" for 180.198.145.35 at 2023-02-05 20:42:32 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.3ms | Allocations: 1369)
+  Rendered books/edit.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1792)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 4846)
+Completed 200 OK in 39ms (Views: 19.7ms | ActiveRecord: 0.2ms | Allocations: 9585)
+
+
+Started GET "/books/1" for 180.198.145.35 at 2023-02-05 20:42:36 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (2.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:23:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 240)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 3206)
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 2.3ms | Allocations: 4349)
+
+
+Started GET "/books" for 180.198.145.35 at 2023-02-05 20:42:39 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/books/index.html.erb:13
+  Rendered books/_form.html.erb (Duration: 4.3ms | Allocations: 839)
+  Rendered books/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1757)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 4723)
+Completed 200 OK in 23ms (Views: 22.4ms | ActiveRecord: 0.1ms | Allocations: 5926)
+
+
+Started GET "/books/1/edit" for 180.198.145.35 at 2023-02-05 20:42:41 +0000
+Cannot render console from 180.198.145.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:27:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (Duration: 2.7ms | Allocations: 914)
+  Rendered books/edit.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1073)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 4800)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 0.1ms | Allocations: 5772)
+
+
